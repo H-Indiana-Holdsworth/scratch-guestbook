@@ -4,8 +4,8 @@ export default function GuestForm() {
   return (
     <div>
       <form className="user-form">
-        <input placeholder="Name" />
-        <input placeholder="Guest Entry" />
+        <input type="text" placeholder="Guest Entry" />
+        <input type="text" placeholder="Name" />
         <button>Save</button>
       </form>
     </div>
