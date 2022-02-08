@@ -19,24 +19,26 @@ export default function GuestForm() {
     e.preventDefault();
     updateEntryList();
   };
-
   return (
     <div>
-      <form className="user-form">
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Guest Entry"
-          value={newEntry}
-          onChange={(e) => setNewEntry(e.target.value)}
-        />
-        <button onSubmit={handleSubmit}>Save</button>
-      </form>
+      <h1>Guest Book</h1>
+      {!user && (
+        <form className="user-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Guest Entry"
+            value={newEntry}
+            onChange={(e) => setNewEntry(e.target.value)}
+          />
+          <button>Save</button>
+        </form>
+      )}
     </div>
   );
 }

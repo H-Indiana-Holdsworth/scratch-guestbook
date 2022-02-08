@@ -6,7 +6,12 @@ export default function EntryList() {
 
   return (
     <div>
-      <h1>Entry List</h1>
+      {entries.map(({ entry, name }) => (
+        <div className="entry-card" key={entry}>
+          <p>{entry}</p>
+          <p>{name}</p>
+        </div>
+      ))}
     </div>
   );
 }
