@@ -3,7 +3,7 @@ import { useContext, createContext, useState } from 'react';
 const EntriesContext = createContext();
 
 function EntriesProvider({ children }) {
-  const [entries, setEntries] = useState('');
+  const [entries, setEntries] = useState([]);
 
   return (
     <EntriesContext.Provider value={{ entries, setEntries }}> {children} </EntriesContext.Provider>

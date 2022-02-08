@@ -11,8 +11,8 @@ export default function Home() {
         <EntryList>
           <Entry />
         </EntryList>
+        <GuestForm />
       </EntriesProvider>
-      <GuestForm />
     </div>
   );
 }
