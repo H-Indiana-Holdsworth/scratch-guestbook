@@ -3,7 +3,11 @@ import React from 'react';
 export default function GuestForm() {
   return (
     <div>
-      <h1>Guest Form</h1>
+      <form className="user-form">
+        <input placeholder="Name" />
+        <input placeholder="Guest Entry" />
+        <button>Save</button>
+      </form>
     </div>
   );
 }

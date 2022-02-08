@@ -6,10 +6,10 @@ import GuestForm from '../components/GuestForm/GuestForm';
 export default function Home() {
   return (
     <div>
+      <GuestForm />
       <EntryList>
         <Entry />
       </EntryList>
-      <GuestForm />
     </div>
   );
 }
