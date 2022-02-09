@@ -27,7 +27,15 @@ export default function GuestForm() {
   };
 
   const nameInput = (
-    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+    <label>
+      Name:
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </label>
   );
 
   return (
@@ -35,12 +43,15 @@ export default function GuestForm() {
       <h1>Guest Book</h1>
       <form className="user-form" onSubmit={handleSubmit}>
         {user ? null : nameInput}
-        <input
-          type="text"
-          placeholder="Guest Entry"
-          value={newEntry}
-          onChange={(e) => setNewEntry(e.target.value)}
-        />
+        <label>
+          Guest Entry:
+          <input
+            type="text"
+            placeholder="Guest Entry"
+            value={newEntry}
+            onChange={(e) => setNewEntry(e.target.value)}
+          />
+        </label>
         <button type="submit">Save</button>
         {user ? <button onClick={handleName}>Change Name</button> : null}
       </form>
