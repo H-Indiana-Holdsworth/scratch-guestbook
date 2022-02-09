@@ -20,18 +20,21 @@ export default function GuestForm() {
     updateEntryList();
   };
 
+  const handleName = (e) => {
+    e.preventDefault();
+    setUser('');
+    setName('');
+  };
+
+  const nameInput = (
+    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+  );
+
   return (
     <div>
       <h1>Guest Book</h1>
       <form className="user-form" onSubmit={handleSubmit}>
-        {!user && (
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        )}
+        {user ? null : nameInput}
         <input
           type="text"
           placeholder="Guest Entry"
@@ -39,7 +42,7 @@ export default function GuestForm() {
           onChange={(e) => setNewEntry(e.target.value)}
         />
         <button type="submit">Save</button>
-        <button>Change Name</button>
+        {user ? <button onClick={handleName}>Change Name</button> : null}
       </form>
     </div>
   );
