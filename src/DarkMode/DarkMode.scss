@@ -1,11 +1,15 @@
 body.light-mode {
-  background-color: purple;
+  background-image: url('../assets/day.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #333;
-  transition: background-color 0.3s ease;
+  // transition: background-img 0.3s ease;
 }
 
 body.dark-mode {
-  background-color: #10171d;
+  background-image: url('../assets/night.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #dfdfdf;
 
   .navbar {
