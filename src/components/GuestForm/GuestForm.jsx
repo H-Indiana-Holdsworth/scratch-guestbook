@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEntries } from '../../context/EntryContext';
 import { useUser } from '../../context/UserContext';
+import '../GuestForm/GuestForm.css';
 
 export default function GuestForm() {
   const { user, setUser } = useUser();
@@ -27,7 +28,7 @@ export default function GuestForm() {
   };
 
   const nameInput = (
-    <label>
+    <label className="name-input">
       Name:
       <input
         type="text"
@@ -43,7 +44,7 @@ export default function GuestForm() {
       <h1>Guest Book</h1>
       <form className="user-form" onSubmit={handleSubmit}>
         {user ? null : nameInput}
-        <label>
+        <label className="entry-input">
           Guest Entry:
           <input
             type="text"
@@ -52,8 +53,14 @@ export default function GuestForm() {
             onChange={(e) => setNewEntry(e.target.value)}
           />
         </label>
-        <button type="submit">Save</button>
-        {user ? <button onClick={handleName}>Change Name</button> : null}
+        <button type="submit" className="save-button">
+          Save
+        </button>
+        {user ? (
+          <button onClick={handleName} className="name-button">
+            Change Name
+          </button>
+        ) : null}
       </form>
     </div>
   );

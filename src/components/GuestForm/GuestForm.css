@@ -1,0 +1,25 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-input {
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.entry-input {
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+
+.save-button {
+  width: fit-content;
+  margin: auto;
+}
+
+.name-button {
+  width: fit-content;
+  margin: auto;
+  margin-top: 0.25rem;
+}
