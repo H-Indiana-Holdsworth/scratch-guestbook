@@ -1,5 +1,5 @@
 body.light-mode {
-  background-image: url('../assets/day.webp');
+  background-image: url('../../assets/day.webp');
   background-repeat: no-repeat;
   background-size: cover;
   color: #333;
@@ -7,7 +7,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-  background-image: url('../assets/night.webp');
+  background-image: url('../../assets/night.webp');
   background-repeat: no-repeat;
   background-size: cover;
   color: #dfdfdf;

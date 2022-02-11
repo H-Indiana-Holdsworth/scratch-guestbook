@@ -3,12 +3,12 @@
   flex-direction: column;
 }
 
-.name-input {
+.name-TextField {
   padding: 1rem;
   padding-bottom: 0.5rem;
 }
 
-.entry-input {
+.entry-TextField {
   padding: 1rem;
   padding-top: 0.5rem;
 }

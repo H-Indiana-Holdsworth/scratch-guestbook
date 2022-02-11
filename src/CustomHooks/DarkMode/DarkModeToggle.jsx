@@ -4,6 +4,7 @@ import Toggle from './Toggle';
 import useDarkMode from 'use-dark-mode';
 
 const DarkModeToggle = () => {
+  // useDarkMode custom hook
   const darkMode = useDarkMode(false);
 
   return (
@@ -11,6 +12,7 @@ const DarkModeToggle = () => {
       <button type="button" onClick={darkMode.disable}>
         ☀
       </button>
+
       <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
       <button type="button" onClick={darkMode.enable}>
         ☾
