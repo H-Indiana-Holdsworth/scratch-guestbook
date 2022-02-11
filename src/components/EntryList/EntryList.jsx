@@ -9,8 +9,8 @@ export default function EntryList() {
     <div className="entry-list">
       {entries.map(({ entry, name }) => (
         <div className="entry-card" key={entry}>
-          <p className="name">Name: {name}</p>
-          <p className="entry">Entry: {entry}</p>
+          <h2 className="name"> {name}</h2>
+          <h4 className="entry"> {entry}</h4>
         </div>
       ))}
     </div>

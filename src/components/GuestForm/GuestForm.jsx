@@ -61,7 +61,6 @@ export default function GuestForm() {
 
         <label className="entry-TextField">
           <StyledTextField
-            key="input-key"
             id="filled-primary"
             label="Entry"
             variant="filled"
