@@ -2,9 +2,14 @@ import { TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useEntries } from '../../context/EntryContext';
 import { useUser } from '../../context/UserContext';
-import Toggle from '../../CustomHooks/DarkMode/Toggle';
 import { useStyles } from '../../CustomHooks/UseStyles/UseStyles';
 import '../GuestForm/GuestForm.css';
+
+// styles material UI text fields
+function StyledTextField(props) {
+  const classes = useStyles();
+  return <TextField InputProps={{ classes, disableUnderline: true }} {...props} />;
+}
 
 export default function GuestForm() {
   // useUser context
@@ -24,13 +29,6 @@ export default function GuestForm() {
     setNewEntry('');
   }
 
-  // styles material UI text fields
-  function StyledTextField(props) {
-    const classes = useStyles();
-
-    return <TextField InputProps={{ classes, disableUnderline: true }} {...props} />;
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     updateEntryList();
@@ -44,13 +42,11 @@ export default function GuestForm() {
 
   const nameInput = (
     <label className="name-TextField">
-      Name:
       <StyledTextField
         id="filled-primary"
-        label="Filled primary"
+        label="Name"
         variant="filled"
         type="text"
-        placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
@@ -64,14 +60,12 @@ export default function GuestForm() {
         {user ? null : nameInput}
 
         <label className="entry-TextField">
-          Guest Entry:
           <StyledTextField
+            key="input-key"
             id="filled-primary"
-            label="Filled primary"
+            label="Entry"
             variant="filled"
-            color="primary"
             type="text"
-            placeholder="Guest Entry"
             value={newEntry}
             onChange={(e) => setNewEntry(e.target.value)}
           />
