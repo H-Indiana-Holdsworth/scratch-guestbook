@@ -42,7 +42,7 @@ export default function AuthForm() {
         <button type="submit">Sign In</button>
       </form>
 
-      {error}
+      {error && <h4>{error}</h4>}
     </div>
   );
 }
