@@ -13,9 +13,9 @@ export function UserProvider({ children }) {
     return loginSuccessful;
   };
 
-  const logout = (callback) => {
+  const logout = (e) => {
+    e.preventDefault();
     setUser(null);
-    callback();
   };
 
   return <UserContext.Provider value={{ user, login, logout }}>{children}</UserContext.Provider>;

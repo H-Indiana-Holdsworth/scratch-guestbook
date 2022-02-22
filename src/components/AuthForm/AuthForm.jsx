@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useUser } from '../../hooks/useUser';
+import { TextField } from '@material-ui/core';
+import { useStyles } from '../../CustomHooks/UseStyles/UseStyles';
+import './AuthForm.css';
+
+// styles material UI text fields
+function StyledTextField(props) {
+  const classes = useStyles();
+  return <TextField InputProps={{ classes, disableUnderline: true }} {...props} />;
+}
 
 export default function AuthForm() {
   const location = useLocation();
@@ -20,26 +29,30 @@ export default function AuthForm() {
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
-        <label>Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          aria-label="Email"
-          onChange={handleFormChange}
-        />
+      <form onSubmit={handleLogin} className="auth-form">
+        <label className="email-TextField">
+          <StyledTextField
+            id="email"
+            name="email"
+            type="email"
+            aria-label="Email"
+            placeholder="Email"
+            onChange={handleFormChange}
+          />
+        </label>
 
-        <label>Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          aria-label="Password"
-          onChange={handleFormChange}
-        />
+        <label className="password-TextField">
+          <StyledTextField
+            id="password"
+            name="password"
+            type="password"
+            aria-label="Password"
+            placeholder="Password"
+            onChange={handleFormChange}
+          />
+        </label>
 
-        <button type="submit" aria-label="Sign In">
+        <button type="submit" aria-label="Sign In" className="sign-in">
           Sign In
         </button>
       </form>

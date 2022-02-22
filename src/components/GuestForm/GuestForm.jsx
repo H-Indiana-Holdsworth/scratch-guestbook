@@ -13,7 +13,7 @@ function StyledTextField(props) {
 
 export default function GuestForm() {
   // useUser context
-  const { user, setUser } = useUser();
+  const { user, logout } = useUser();
 
   // useEntries context
   const { setEntries } = useEntries();
@@ -24,7 +24,6 @@ export default function GuestForm() {
 
   // updates entry list with info respective to the user
   function updateEntryList() {
-    setUser(name);
     setEntries((prevState) => [...prevState, { name: name, entry: newEntry }]);
     setNewEntry('');
   }
@@ -32,12 +31,6 @@ export default function GuestForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     updateEntryList();
-  };
-
-  const handleName = (e) => {
-    e.preventDefault();
-    setUser('');
-    setName('');
   };
 
   const nameInput = (
@@ -75,8 +68,8 @@ export default function GuestForm() {
         </button>
 
         {user ? (
-          <button onClick={handleName} className="name-button">
-            Change Name
+          <button onClick={logout} className="name-button">
+            Logout
           </button>
         ) : null}
       </form>
