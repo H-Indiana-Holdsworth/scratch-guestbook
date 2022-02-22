@@ -1,8 +1,8 @@
 import { TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useEntries } from '../../context/EntryContext';
-import { useUser } from '../../context/UserContext';
 import { useStyles } from '../../CustomHooks/UseStyles/UseStyles';
+import { useUser } from '../../hooks/useUser';
 import '../GuestForm/GuestForm.css';
 
 // styles material UI text fields
