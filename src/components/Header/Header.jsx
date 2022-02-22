@@ -5,12 +5,14 @@ import { useUser } from '../../hooks/useUser';
 
 export default function Header() {
   // useUser context
-  const { user } = useUser();
+  const {
+    user: { email },
+  } = useUser();
 
   return (
     <div>
       <DarkModeToggle />
-      Hello {user ? user : 'Guest'}
+      Hello {email ? email : 'Guest'}
     </div>
   );
 }

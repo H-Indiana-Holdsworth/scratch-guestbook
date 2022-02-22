@@ -12,10 +12,10 @@ export default function AuthForm() {
 
   const { from } = location.state || { from: { pathname: '/' } };
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    const loginSuccessful = user.login(formState.email, formState.password);
-    loginSuccessful ? history.replace(from.pathname) : setError('Login Failed');
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const loginWasSuccessful = user.login(formState.email, formState.password);
+    loginWasSuccessful ? history.replace(from.pathname) : setError('Login Failed');
   };
 
   return (
@@ -39,7 +39,9 @@ export default function AuthForm() {
           onChange={handleFormChange}
         />
 
-        <button type="submit">Sign In</button>
+        <button type="submit" aria-label="Sign In">
+          Sign In
+        </button>
       </form>
 
       {error && <h4>{error}</h4>}
