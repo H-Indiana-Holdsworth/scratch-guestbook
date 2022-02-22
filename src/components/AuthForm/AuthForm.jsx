@@ -5,10 +5,10 @@ export default function AuthForm() {
     <div>
       <form>
         <label>Email</label>
-        <input type="text" aria-label="email-input" />
+        <input id="email" name="email" type="email" aria-label="email-input" />
 
         <label>Password</label>
-        <input type="text" aria-label="password-input" />
+        <input id="password" name="password" type="password" aria-label="password-input" />
 
         <button type="submit">Sign In</button>
       </form>
