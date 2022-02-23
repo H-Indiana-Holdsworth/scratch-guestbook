@@ -41,10 +41,10 @@ test('tests guest book functionality', () => {
   const displayEntry = screen.getByRole('heading', { name: /goodbye world/i });
   expect(displayEntry).toBeInTheDocument();
 
-  // user clicks name change button
-  const changeNameButton = screen.getByRole('button', { name: /change name/i });
-  userEvent.click(changeNameButton);
+  //   // user clicks logout button
+  //   const logoutButton = screen.getByRole('button', { name: /logout/i });
+  //   userEvent.click(logoutButton);
 
-  // name input displays again
-  expect(screen.getByRole('textbox', { name: /name entry/i })).toBeInTheDocument();
+  //   // auth page shows again
+  //   expect(screen.getByRole('button', { name: /logout/i })).toBeInTheDocument();
 });

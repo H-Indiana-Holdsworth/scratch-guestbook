@@ -68,7 +68,7 @@ export default function GuestForm() {
         </button>
 
         {user ? (
-          <button onClick={logout} className="name-button">
+          <button onClick={logout} className="name-button" aria-label="Logout">
             Logout
           </button>
         ) : null}
