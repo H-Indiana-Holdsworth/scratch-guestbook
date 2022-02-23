@@ -1,0 +1,22 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email-TextField {
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.password-TextField {
+  padding: 1rem;
+  padding-top: 0.5rem;
+}
+
+.sign-in {
+  width: fit-content;
+  margin: auto;
+  background-color: rgba(98, 0, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}

@@ -1,0 +1,13 @@
+.entry-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.entry-card {
+  width: fit-content;
+  border: 2px solid blanchedalmond;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
